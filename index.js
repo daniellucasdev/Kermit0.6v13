@@ -22,12 +22,15 @@ client.on("messageCreate", (message) =>{
     }
 })
 
-const welcomeChannelId = '1013982982970802216'
+// ID COMUNHÃO    :  1013982982970802216
+// ID LABORATÓRIO :  1021886207329849395
+
+const welcomeChannelId = '1021886207329849395'
 
 client.on("guildMemberAdd", async (member) => {
     const img = await generateImage(member)
     member.guild.channels.cache.get(welcomeChannelId).send({
-        content: `<@${member.id}> Bem vindo à essa bosta`,
+        content: `<@${member.id}> KERO KERO`,
         files: [img]
     })
 })

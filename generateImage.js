@@ -1,6 +1,6 @@
 const Canvas = require("canvas")
 const Discord = require("discord.js")
-const background = "https://i.imgur.com/KkXdckS.png"
+const background = "https://i.imgur.com/xQCbft1.png"
 
 const dim = {
     height: 675,
@@ -25,7 +25,7 @@ const generateImage = async (member) => {
     const backimg = await Canvas.loadImage(background)
     ctx.drawImage(backimg, 0, 0)
 
-    ctx.fillStyle = "rgba(0,0,0,0.8)"
+    ctx.fillStyle = "rgba(0, 142, 31, 0.592)"
     ctx.fillRect(dim.margin, dim.margin, dim.width - 2 * dim.margin, dim.height - 2 * dim.margin)
 
     const avimg = await Canvas.loadImage(avatarURL)
@@ -43,13 +43,13 @@ const generateImage = async (member) => {
     ctx.textAlign = "center"
 
     ctx.font = "50px Roboto"
-    ctx.fillText("Saia", dim.width/2, dim.margin + 70)
+    ctx.fillText("Ribbit.", dim.width/2, dim.margin + 70)
 
     ctx.font = "60px Roboto"
     ctx.fillText(username + discrim, dim.width/2, dim.height - dim.margin - 125)
 
     ctx.font = "40px Roboto"
-    ctx.fillText("enquanto há tempo", dim.width / 2, dim.height - dim.margin - 50)
+    ctx.fillText("(Oi em saponês)", dim.width / 2, dim.height - dim.margin - 50)
 
     const attachment = new Discord.MessageAttachment(canvas.toBuffer(), "welcome.png")
     return attachment
